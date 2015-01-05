@@ -1,0 +1,16 @@
+---
+- name: Install required deps
+  apt: >
+    update_cache=yes
+    name={{ item }}
+    state=present
+  with_items:
+    - ruby1.9.1-dev
+    - libssl1.0.0
+    - build-essential
+    - g++
+  sudo: true
+- name: Install bundler
+  gem: name=bundler state=present
+- name: Event machine
+  gem: name=eventmachine version=1.0.4

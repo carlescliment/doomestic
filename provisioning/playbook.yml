@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: no
+  roles:
+    - ruby
+
+- hosts: all
+  sudo: no
+  roles:
+    - app
